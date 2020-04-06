@@ -14,8 +14,19 @@ int main() {
 		}
 	}
 	//обработка и вывод
-	for (int i = a.size() - 1; i >= 0; i--) {
-		cout << a[i] << " ";
+//обработка
+	int num_min = 0; //номер минимального элемента
+	for (int i = 0; i < a.size(); i++) {
+		if (a[i] < a[num_min]) {
+			num_min = i;
+		}
 	}
+	//обмен значений элементов a[0] и a[num_min]
+	int temp;
+	temp = a[0];
+	a[0] = a[num_min];
+	a[num_min] = temp;
+	//вывод
+		cout << a[0] << " ";
 	return 0;
 }
